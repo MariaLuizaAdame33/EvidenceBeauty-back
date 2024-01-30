@@ -63,7 +63,7 @@ class AgendaProfissionaiscontroller extends Controller
 
 //pesquisar por data
 public function pesquisarPorAgendamento(Request $request){
-    $agendamento = AgendaProfissionais::where('profissional_id', 'like', '%' . $request->profissional_id . '%')->get();
+    $agendamento = AgendaProfissionais::where('dataHora', 'like', '%' . $request->dataHora. '%')->get();
     if (count($agendamento) > 0) {
         return response()->json([
             'status' => true,
@@ -111,7 +111,7 @@ return response()->json([
 
 
     //EDITANDO O AGENDAMENTO
-    public function update(AgendaFormRequest $request){
+    public function update(AgendaProfissionaisFormRequest $request){
         $agendamento = AgendaProfissionais::find($request->id);
 
         $dataHoraAgendamento = new DateTime($request->dataHora);
