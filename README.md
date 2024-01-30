@@ -11,7 +11,7 @@ Este projeto contém um site feito por estudantes da escola SESI, para aprofunda
 
 2. Acesse o diretório do projeto:
 ```
-cd JoestarsBeauty
+cd barbearia-back
 ```
 
 3. Acessar o Visual Studio Code
@@ -28,6 +28,11 @@ composer update
 ```
 php artisan db:seed
 ```
+6. Nome e Email
+```
+git config --global user.name "MariaLuizaAdame33"
+git config --global user.email "maluzinha.adame@gamil.com"
+
 
 ## Licença
 ```
