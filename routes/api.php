@@ -91,6 +91,8 @@ route::get('Adm/pagamento/find/{id}', [PagamentoController::class, 'pesquisarPor
 route::delete('Adm/pagamento/delete/{id}', [PagamentoController::class, 'excluir']);
 route::put('Adm/pagamento/update', [PagamentoController::class, 'update']);
 route::get('Adm/pagamento/visualizar', [PagamentoController::class, 'retornarTodos']);
+route::get('Adm/pagamento/habilitados', [PagamentoController::class, 'retornarTodosHabilitados']);
+route::get('Adm/pagamento/desabilitados', [PagamentoController::class, 'retornarTodosDesabilitados']);
 
 
 //Profissional
