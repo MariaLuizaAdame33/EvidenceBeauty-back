@@ -13,6 +13,7 @@ class PagamentoController extends Controller
         $pagamento= Pagamento::create([
             'tipoDePagamento'=> $request ->tipoDePagamento,
             'taxa'=> $request ->taxa,
+            'status'=> $request ->status,
         ]);
 
         return response()->json([
