@@ -21,8 +21,43 @@ class PagamentoController extends Controller
             "data" => $pagamento
         ], 200);
 }
+
 public function retornarTodos(){
     $pagamento = pagamento::all();
+    if (!isset($pagamento)) {
+        return response()->json([
+            'status' => false,
+            'message' => 'Não há registros no sistema'
+        ]);
+    }
+    return response()->json([
+        'status'=> true,
+        'data'=> $pagamento
+    ]);
+}
+
+public function retornarTodosHabilitados(){
+    $pagamento = pagamento::where('status', 'habilitado')->get();
+    if (!isset($pagamento)) {
+        return response()->json([
+            'status' => false,
+            'message' => 'Não há registros no sistema'
+        ]);
+    }
+    return response()->json([
+        'status'=> true,
+        'data'=> $pagamento
+    ]);
+}
+
+public function retornarTodosDesabilitados(){
+    $pagamento = pagamento::where('status', 'desabilitado')->get();
+    if (!isset($pagamento)) {
+        return response()->json([
+            'status' => false,
+            'message' => 'Não há registros no sistema'
+        ]);
+    }
     return response()->json([
         'status'=> true,
         'data'=> $pagamento
